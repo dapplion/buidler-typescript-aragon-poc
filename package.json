@@ -21,7 +21,8 @@
   "devDependencies": {
     "@nomiclabs/buidler": "^1.0.1",
     "@nomiclabs/buidler-ethers": "^1.0.1",
-    "@nomiclabs/buidler-etherscan": "^1.0.1",
+    "@nomiclabs/buidler-truffle5": "^1.0.1",
+    "@nomiclabs/buidler-web3": "^1.0.1",
     "@types/chai": "^4.2.4",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.7",
@@ -33,7 +34,13 @@
     "ts-node": "^8.4.1",
     "typechain": "^1.0.3",
     "typechain-target-ethers": "^1.0.2",
+    "typechain-target-truffle": "^1.0.2",
+    "typechain-target-web3-v1": "^1.0.4",
     "typescript": "^3.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@aragon/os": "^4.3.0",
+    "ipfsd-ctl": "^1.0.2",
+    "open": "^7.0.0"
+  }
 }

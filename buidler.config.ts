@@ -1,13 +1,20 @@
 import { BuidlerConfig, usePlugin } from "@nomiclabs/buidler/config";
 import waffleDefaultAccounts from "ethereum-waffle/dist/config/defaultAccounts";
 
+import "./tasks/accounts";
+import "./tasks/apm";
+import "./tasks/dao";
+import "./tasks/deploy";
+import "./tasks/ipfs";
+import "./tasks/publish";
+import "./tasks/run";
+
 usePlugin("@nomiclabs/buidler-ethers");
-usePlugin("@nomiclabs/buidler-etherscan");
+usePlugin("@nomiclabs/buidler-truffle5");
 usePlugin("buidler-typechain");
 
 const INFURA_API_KEY = "";
 const RINKEBY_PRIVATE_KEY = "";
-const ETHERSCAN_API_KEY = "";
 
 const config: BuidlerConfig = {
   solc: {
@@ -28,13 +35,7 @@ const config: BuidlerConfig = {
       accounts: [RINKEBY_PRIVATE_KEY]
     }
   },
-  etherscan: {
-    // The url for the Etherscan API you want to use.
-    url: "https://api-rinkeby.etherscan.io/api",
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: ETHERSCAN_API_KEY
-  },
+  defaultNetwork: "buidlerevm",
   typechain: {
     outDir: "typechain",
     target: "ethers"
