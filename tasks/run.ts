@@ -47,7 +47,9 @@ task(TASK_START, "Runs an Aragon app").setAction(async (taskArgs, env) => {
   //     8.4. Building Aragon client
   //     8.5. Starting Aragon client
   //     8.6. Opening client
-  await open(`http://localhost:8080/ipfs/${version.contentUri}`);
+  await open(
+    `http://localhost:8080/ipfs/${version.contentUri.replace("ipfs:", "")}`
+  );
 
   await new Promise(r => {});
 });

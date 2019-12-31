@@ -1,41 +1,38 @@
-# Typescript Solidity Dev Starter Kit
+# Buidler - Aragon POC
 
-This is a starter kit for developing, testing, and deploying smart contracts with a full Typescript environment. This stack uses [Buidler](https://buidler.dev) as the platform layer to orchestrate all the tasks. [Ethers](https://docs.ethers.io/ethers.js/html/index.html) is used for all Ethereum interactions and testing.
+Based on [Typescript Solidity Dev Starter Kit](https://github.com/rhlsthrm/typescript-solidity-dev-starter-kit)
+
+The tasks in this repo should eventually become a buidler plugin that will be used in the environment of Aragon Apps. This plugin will have only part of the features of the current aragon CLI, mainly:
+
+- `publish`: Build, upload and publish a new App version
+- `run`: Publish the current App for local development
+
+The purpose of this repo is to be starting point to progressively build such functionality. Moving to buidler is a great opportunity to re-write these commands, given the difficulties found while attempting to refactor them in the context of the current CLI.
+
+---
+
+These concerns below should be addressed before progressing:
+
+- How will this buidler plugin connect to ENS, APM and DAO templates locally? Is there going to be a snapshot like currently?
+- How is @aragon/aragen going to integrate with this buidler plugin?
+- How is logging, reporting going to work in buidler? Are we gonna continue using `listr` or move to something else?
 
 ## Using this Project
 
-Clone this repository, then install the dependencies with `npm install`. Build everything with `npm run build`. https://buidler.dev has excellent docs, and can be used as reference for extending this project.
+Clone this repository, then install the dependencies with
 
-## Available Functionality
+```
+npm install
+```
 
-### Build Contracts
+Then can check the available tasks with
 
-`npm run compile`
+```
+npx buidler
+```
 
-### Generate TypeChain Typings
+You can run the mock task `aragon run` to see buidler in action. **Note** that the command now does non-sense actions like uploading the `build` folder. These are just placeholders / mocks for the actual functionality being implemented latter.
 
-`npm run build`
-
-### Run Contract Tests
-
-`npm run test`
-
-Note: As is, the tests fail on purpose. This is to show the Solidity stack traces that Buidler enables!
-
-### Deploy to Ethereum
-
-Create/modify network config in `buidler.config.ts` and add API key and private key, then run:
-
-`npx buidler run --network rinkeby scripts/deploy.ts`
-
-### Verify on Etherscan
-
-Add Etherscan API key to `buidler.config.ts`, then run:
-
-`npx buidler verify-contract --contract-name Counter --address <DEPLOYED ADDRESS>`
-
-## Enhancement Wish List
-
-* Better migrations strategy (Buidler working on this)
-
-PRs and feedback welcome!
+```
+npx buidler start
+```

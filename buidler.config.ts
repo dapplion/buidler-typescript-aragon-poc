@@ -1,9 +1,7 @@
 import { BuidlerConfig, usePlugin } from "@nomiclabs/buidler/config";
 import waffleDefaultAccounts from "ethereum-waffle/dist/config/defaultAccounts";
 
-import "./tasks/accounts";
 import "./tasks/apm";
-import "./tasks/dao";
 import "./tasks/deploy";
 import "./tasks/ipfs";
 import "./tasks/publish";
